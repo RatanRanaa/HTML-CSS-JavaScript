@@ -19,7 +19,6 @@ main{
 
 main .list ul {
   display: flex;
-  /* padding: 0 60px; */
 }
 
 main .list ul li {
@@ -29,4 +28,9 @@ main .list ul li {
   font-weight: bold;
   letter-spacing: 0.1rem;
   cursor: pointer;
+}
+
+main .list ul li a{
+  text-decoration: none;
+  color: white;
 }
