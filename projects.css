@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+body{
+  overflow: hidden;
+}
+
 main{
     display: flex;
     align-items: center;
@@ -35,7 +39,15 @@ main{
     color: white;
   }
 
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+  }
+
   .card {
+    border: 2px solid red;
     margin: 10px 10px;
     display: flex;
     flex-direction: column;
@@ -46,6 +58,7 @@ main{
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     position: relative;
+    overflow: hidden;
   }
   
   .card img {
@@ -128,3 +141,106 @@ main{
     background-color: #3e8e41;
   }
   
+  
+  /* Car moving Card */
+  .sky{
+    height: 100vh;
+    width: 100%;
+    background-image: url(/image/background.jpg);
+    background-repeat: no-repeat;
+    position: absolute;
+    overflow: hidden;
+    margin-bottom: 120px;
+  }
+
+  .trees {
+    height: 100vh;
+    width: 100vw;
+    background-image: url(/image/trees.png);
+    background-repeat: repeat-x;
+    background-size: cover;
+    position: absolute;
+    bottom: 20vh;
+    /* animation: carMove linear 2s infinite; */
+  }
+
+  .track{
+    height: 100vh;
+    width: 400vw;
+    background-image: url(/image/track.png);
+    background-repeat: repeat-x;
+    position: absolute;
+    top: 60vh;
+   animation: carMove linear 2s infinite;
+  }
+  
+  .car {
+    height: 100px;
+    width: 300px;
+    background-image: url(/image/car_body.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: -20px;
+    bottom: 25vh;
+    animation: shake linear .9s infinite;
+  }
+  
+.wheel1 img{
+  width: 60px;
+  height: max-content;
+  position: relative;
+  top: 40px;
+  left: 45px;
+  animation: wheelRotation linear .16s infinite;
+}
+
+
+.wheel2 img{
+  width: 60px;
+  height: max-content;
+  position: relative;
+  top: -22px;
+  left: 222px;
+  animation: wheelRotation linear .16s infinite;
+
+}
+
+@keyframes wheelRotation
+{
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes carMove
+{
+    100%{
+        transform: translateX(-20vw);
+    }
+}
+
+@keyframes shake
+{
+    0%{
+        transform: translateY(-1px);
+    }
+    50%{
+        transform: translateY(1px);
+    }
+    100%{
+        transform: translateY(-1px);
+    }
+}
+@keyframes shakebody
+{
+    0%{
+        transform: translateY(-50px);
+    }
+    50%{
+        transform: translateY(50px);
+    }
+    100%{
+        transform: translateY(-50px);
+    }
+}

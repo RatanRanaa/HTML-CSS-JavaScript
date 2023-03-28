@@ -26,3 +26,15 @@ const formattedDate = `${day}/${month}/${year}`;
 
 // Display the formatted date in the HTML element
 document.getElementById('date-display').textContent = formattedDate;
+
+
+
+// Car project
+
+const autoplay = document.getElementById('audio')
+const sky = document.querySelector('.sky')
+
+sky.addEventListener('mouseover', function() {
+autoplay.play()
+});
+
